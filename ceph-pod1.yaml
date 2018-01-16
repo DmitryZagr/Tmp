@@ -21,14 +21,14 @@ spec:
       - name: ceph-busybox
         image: busybox
         command: ["sleep", "60000"]
-      #   volumeMounts:
-      #   - name: ceph-vol1
-      #     mountPath: /usr/share/busybox
-      #     readOnly: false
-      # volumes:
-      # - name: ceph-vol1
-      #   persistentVolumeClaim:
-      #     claimName: ceph-claim
+        volumeMounts:
+        - name: ceph-vol1
+          mountPath: /usr/share/busybox
+          readOnly: false
+      volumes:
+      - name: ceph-vol1
+        persistentVolumeClaim:
+          claimName: ceph-claim
 
 # apiVersion: apps/v1beta2 # for versions before 1.8.0 use apps/v1beta1
 # kind: Deployment
